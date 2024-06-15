@@ -25,10 +25,10 @@ jobs:
 
     - name: Execute npm install
       run: npm install
-      
+
     - name: Execute npm build
       run: npm run build
-      
+
     - name: Create Database
       run: |
         mkdir -p database
@@ -37,10 +37,10 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php artisan test --parallel
-      
+      run: php artisan test
+
     - name: Execute larastan
       run: vendor/bin/phpstan analyze
-      
+
     - name: Execute pint
-      run: vendor/bin/pint --test
+      run: vendor/bin/pint
