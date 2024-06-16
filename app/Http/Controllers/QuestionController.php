@@ -11,7 +11,7 @@ class QuestionController extends Controller
     {
         Question::create(
             request()->validate([
-                'question' => ['required'],
+                'question' => ['required', 'min:10'],
             ])
         );
 
